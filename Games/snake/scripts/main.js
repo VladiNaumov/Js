@@ -5,7 +5,7 @@ let scoreBlock;
 //наши очки внутри игы
 let score = 0;
 
-let canvas = document.querySelector("#game-canvas");
+let canvas = document.querySelector("#game-canvas"); // подключение canvas в html файле <canvas id="game-canvas" width="480" height="600"></canvas>
 let context = canvas.getContext("2d");
 scoreBlock = document.querySelector(".game-score .score-count");
 
