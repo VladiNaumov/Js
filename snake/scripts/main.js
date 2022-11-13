@@ -13,7 +13,7 @@ scoreBlock = document.querySelector(".game-score .score-count");
 //настройки игры 
 const config = {
 	step: 0, //пропускает игровой цикл
-	maxStep: 6, //пропускает ировой цикл
+	maxStep: 6, //пропускает игровой цикл
 	sizeCell: 16, //размер игровой ячейки
 	sizeBerry: 16 / 4 //размер одной ягоды
 }
@@ -38,28 +38,37 @@ function drawScore() {
 
 // отрисовка змейки 
 function drawSnake() {
+	
 	snake.x += snake.dx; ///координаты змейки по х
 	snake.y += snake.dy; // координаты змейки по y
 
 	collisionBorder();
-
-	// создаем змейку
+	
+	// отрисовываем змейку в координатах 
 	snake.tails.unshift( { x: snake.x, y: snake.y } );
 
 	
-	if ( snake.tails.length > snake.maxTails ) {
+	// следим за длинной змейки 
+	if ( snake.tails.length > snake.maxTails ) 
+	{
 		snake.tails.pop();
 	}
+	
 
 	// перебираем дчерние элементы змейки и отрисовываем их
 	snake.tails.forEach( function(el, index){
+		
+		
+		// Чтобы установить цвет/градиент заливки, используется свойство fillStyle.
 		if (index == 0) {
+		  // красим голову змейки в ... цвет
 			context.fillStyle = "#c0e619 ";
 		} else {
 			context.fillStyle = "#227552";
 		}
-		// красим голову змейки в яркий красный цвет
-		context.fillRect( el.x, el.y, config.sizeCell, config.sizeCell );
+		
+	// Метод fillRect() рисует "залитый" прямоугольник. Цвет заливки, по умолчанию, черный. 
+	   context.fillRect( el.x, el.y, config.sizeCell, config.sizeCell );
 
 	} );
 }
@@ -81,7 +90,7 @@ function collisionBorder() {
 	}
 }
 
-// упарвление змейки 
+// управление змейки 
 document.addEventListener("keydown", function (e) {
 	// e.code управление спомощью клавиатуры направление змейки 
 	if ( e.code == "ArrowUp" ) {
@@ -105,7 +114,7 @@ function gameLoop() {
 	
 	requestAnimationFrame( gameLoop );
 	
-	drawScore();
+	// drawScore();
 	
 	if ( ++config.step < config.maxStep) {
 		return;
