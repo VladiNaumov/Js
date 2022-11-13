@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset ="UTF-8">
+	<title>Торпедный бой</title>	
+</head>
+<body>
+
+<canvas id="canvas" width="400" height="500"></canvas>
+
+<script>
+	var canvas = document.getElementById("canvas")
+	var ctx = canvas.getContext("2d")
+	
+	var shot = false
+	var crash = false
+	
+	function getRand(min, max){
+		return Math.random() * (max - min) + min;
+	}
+	
+	var speedShip = getRand(0.1, 0.2)
+	
+	var torp = new Image()
+	torp.src = "img/torp.png"
+	torp.X = 175
+	torp.Y = 450
+	torp.widtH = 50
+	torp.heighT = 100
+	
+	var ship = new Image()
+	ship.src = "img/ship.png"
+	ship.X = -30
+	ship.Y = 30
+	ship.widtH = 30
+	ship.heighT = 20	
+	
+	var drawSky = function(){
+		ctx.fillStyle = "skyblue"
+		ctx.fillRect(0, 0, 400, 50)
+	}
+	
+	var drawSea = function(){
+		ctx.fillStyle = "cadetblue"
+		ctx.fillRect(0, 50, 400, 450)
+	}
+
+	var drawTorp = function(){
+		if (shot === true){
+			torp.Y -= 0.5
+			torp.widtH -= 0.05
+			torp.heighT -= 0.1
+			torp.X += 0.025
+		}
+	
+		ctx.drawImage(torp, torp.X, torp.Y, torp.widtH, torp.heighT)
+	}
+	
+	var drawShip = function(){
+		
+		ship.X += speedShip
+		
+		if (torp.Y === 50 && torp.X + torp.widtH > ship.X
+		&& torp.X < ship.X + 30){
+			crash = true			
+		}
+		
+		if (crash){
+			ship.Y += speedShip
+			ship.heighT -= speedShip
+			
+			if (ship.heighT < 0){
+				ship.X = 450
+			}
+		}
+		
+		ctx.drawImage(ship, ship.X, ship.Y, ship.widtH, ship.heighT)
+	}
+	
+	var render = function(){
+		drawSea()
+		drawTorp()
+		drawSky()
+		drawShip()
+	
+		requestAnimationFrame(render)
+	}
+	render()
+	
+	addEventListener("keydown", function(event){
+		if (event.keyCode === 38){
+			shot = true
+		}
+	})	
+
+</script>
+
+</body>
+</html>

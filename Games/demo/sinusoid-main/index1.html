@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head> <meta charset="UTF-8">
+	<title>Sinusoid 1</title> </head>
+<body>
+	<canvas id="canvas" width="400" height="400"></canvas>
+	
+<script>
+	var canvas = document.getElementById("canvas")
+	var ctx = canvas.getContext("2d")		
+	
+	var x = 0
+	var y = 0	
+	
+	ctx.fillStyle = "black"
+	ctx.fillRect(0, 0, 400, 400)	
+
+	var render = function(){		
+	
+		x += 1
+		
+		y = 200 + 30 * Math.cos(2 * x * Math.PI/180) 		
+		
+		ctx.fillStyle = "lime"
+		ctx.fillRect(x, y, 3, 3)
+		
+		requestAnimationFrame(render)
+	}
+	render()
+	
+</script>
+</body>
+</html>

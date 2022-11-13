@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>	<meta charset ="UTF-8">
+	<title>Pinball flipper</title> </head>
+<body>
+
+<canvas id="canvas" width="200" height="500"></canvas>
+
+<script>
+	var canvas = document.getElementById("canvas")
+	var ctx = canvas.getContext("2d")		
+	
+	var okUp = false
+	
+	var drawRect = function(){
+		ctx.fillStyle = "paleturquoise"
+		ctx.fillRect(0, 0, 200, 500)
+	}
+	
+	var circle = function(x, y){
+		ctx.fillStyle = "green"
+		ctx.beginPath()
+		ctx.arc(x, y, 10, 0, 6.28, false)
+		ctx.fill()
+	}
+	
+	class Ball{
+		constructor(x, y){
+			this.x = x
+			this.y = y
+		}
+		
+		addX = 1
+		addY = -6
+		
+		drawBall(){
+			
+			this.x += this.addX
+			this.y += this.addY
+			
+			this.addY += 0.04
+			
+			if (this.y - 10 < 0){
+				this.addY = -this.addY
+				this.y += 5
+			}
+			
+			if (this.y + 10 > 500){
+				this.addY = -6
+			}
+			
+			if (this.x + 10 > 200){
+				this.addX = -this.addX
+			}
+			
+			if (this.x - 10 < 0){
+				this.addX = -this.addX
+			}
+			
+			var m = Math.sqrt(Math.pow(this.x - myFlipper.x, 2) + 
+			Math.pow(this.y - myFlipper.y, 2))
+			
+			if (m < 110){
+				var f = Math.sqrt(Math.pow(this.x - myFlipper.x2, 2) + 
+				Math.pow(this.y - myFlipper.y2, 2))
+				
+				if (m + f < 105){
+					this.addY = -this.addY
+					
+					if (this.addY > 0){
+						this.y += 7
+					}else{
+						this.y -= 7
+					}
+				}
+			}
+			
+			circle(this.x, this.y)			
+		}
+	}	
+	
+	var ball = new Ball(10, 490)
+	
+	class Flipper{
+		constructor(x, y){
+			this.x = x
+			this.y = y
+			this.x2 = x + 95
+			this.y2 = y + 30
+			this.move = 0
+		}
+		
+		drawFlipper(){
+			
+			if (this.y2 === 430 && okUp === true){
+				this.move = 1
+			}
+			
+			if (this.y2 === 350){
+				this.move = -1
+				okUp = false
+			}
+			
+			if (this.y2 === 430 && okUp === false){
+				this.move = 0
+			}
+			
+			if (this.move === 1){
+				this.y2 -=4
+				this.x2 = this.x + Math.sqrt(10000 - Math.pow(this.y2 - this.y, 2))
+			}
+			
+			if (this.move === -1){
+				this.y2 +=4
+				this.x2 = this.x + Math.sqrt(10000 - Math.pow(this.y2 - this.y, 2))
+			}
+			
+			ctx.strokeStyle = "orangered"
+			ctx.lineWidth = 10
+			ctx.beginPath()
+			ctx.moveTo(this.x, this.y)
+			ctx.lineTo(this.x2, this.y2)
+			ctx.stroke()
+		}
+	}
+	
+	var myFlipper = new Flipper(10, 400)
+	
+	var render = function(){	
+		
+		drawRect()
+		ball.drawBall()
+		myFlipper.drawFlipper()
+		
+		requestAnimationFrame(render)
+	}
+	render()
+	
+	addEventListener("keydown", function(event){
+		if (event.keyCode === 38){
+			okUp = true
+		}
+	})
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

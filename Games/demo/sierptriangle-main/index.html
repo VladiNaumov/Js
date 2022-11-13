@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>	<meta charset ="UTF-8">
+	<title>Sierpinski triangle (fractal)</title> </head>
+<body>
+
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+	var canvas = document.getElementById("canvas")
+	var ctx = canvas.getContext("2d")	
+	
+	class Point{
+		constructor(x, y){
+			this.x = x
+			this.y = y
+		}
+	}
+	
+	var arrPoints = [new Point(200, 10), new Point(10, 340), new Point(390, 340)]
+	
+	ctx.fillStyle = "black"
+	ctx.fillRect(0, 0, 400, 400)
+	
+	ctx.fillStyle = "aqua"
+	
+	var render = function(){
+	
+		var randVertex = Math.floor(Math.random() * 3)
+		var randPoint = Math.floor(Math.random() * arrPoints.length)
+		
+		var x = arrPoints[randVertex].x + (arrPoints[randPoint].x - arrPoints[randVertex].x) / 2
+		
+		var y = arrPoints[randVertex].y + (arrPoints[randPoint].y - arrPoints[randVertex].y) / 2
+		
+		ctx.fillRect(x, y, 1, 1)
+		
+		arrPoints.push(new Point(x, y))
+		
+		requestAnimationFrame(render)
+	}
+	render()	
+	
+</script>
+
+</body>
+</html>
