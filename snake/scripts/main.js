@@ -44,7 +44,36 @@ function drawSnake() {
 
 	collisionBorder();
 	
-	// отрисовываем змейку в координатах 
+	// отрисовыв
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	йку в координатах 
 	snake.tails.unshift( { x: snake.x, y: snake.y } );
 
 	
