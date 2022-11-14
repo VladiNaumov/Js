@@ -49,11 +49,13 @@ var canvas = document.getElementById("canvas")
 		
 		// это метод отрисовывает платформу в игре
 		drawPlatform(){
+			// движение платформы в лево
 			if(okLeft === true && this.x > 0) 
 			{
 				this.x -=5
 			}
 			
+			//движение платформы вправо
 			if(okRight === true && this.x < 300) 
 			{
 				this.x +=5
@@ -85,22 +87,27 @@ var canvas = document.getElementById("canvas")
 			this.x +=this.addX
 			this.y +=this.addY
 			
+			// что бы шарик отскакивал от стены
 			if (this.x + 10 > 400){				
 				this.addX = - this.addX				
 			}
 			
+			// что бы шарик отскакивал от стены
 			if (this.x - 10 < 0){
 				this.addX = -this.addX
 			}
 			
+			// что бы шарик отскакивал от стены
 			if (this.y - 10 < 0){				
 				this.addY = - this.addY				
 			}
 			
+			// отскакивание шарика от самой плотформы
 			if (this.y + 10 === 480 && this.x + 10 > myPlatf.x && this.x - 10 < myPlatf.x + 100){
 				this.addY = - this.addY
 			}	
 			
+			// проверка что шарик не попал на платформу и нужно остановить игру
 			if (this.y - 10 > 500){
 				stop()
 			}
