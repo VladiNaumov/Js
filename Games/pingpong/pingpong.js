@@ -1,9 +1,15 @@
 	
-	// получение элемета canvas который определён в .html
+	/* мы получаем узел нашего холста <canvas>, далее с помощью document.getContext() метода мы присваиваем ему контекст. 
+	Имея узел элемента , вы всегда можете получить для рисования контекст при помощи метода getContext(). 
+		
+	var canvas = document.getElementById("canvas")
+   	var ctx = canvas.getContext("2d") 
+	*/
+   	
+	// получение элемета id:canvas который определён в .html
 	var canvas = document.getElementById("canvas")
     // определение контекста рисования (мы рисуем в 2D по этому указываем в скобочках это),
-    //позже данную ссылку ctx мы будем использовать для отрисовки всех объектов
-	var ctx = canvas.getContext("2d")
+   	var ctx = canvas.getContext("2d")
 	
 	// переменные для отслеживания нажатие клавиши влево или вправо
 	var okLeft = false		

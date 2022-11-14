@@ -1,3 +1,10 @@
+	/* мы получаем узел нашего холста <canvas>, далее с помощью document.getContext() метода мы присваиваем ему контекст. 
+	Имея узел элемента , вы всегда можете получить для рисования контекст при помощи метода getContext(). 
+		
+	var canvas = document.getElementById("canvas")
+   	var ctx = canvas.getContext("2d") 
+	*/
+    
 
 // отображение очков
 let scoreBlock;
