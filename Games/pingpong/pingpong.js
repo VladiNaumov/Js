@@ -1,5 +1,6 @@
-// получение элемета canvas который определён в .html
-var canvas = document.getElementById("canvas")
+	
+	// получение элемета canvas который определён в .html
+	var canvas = document.getElementById("canvas")
     // определение контекста рисования (мы рисуем в 2D по этому указываем в скобочках это),
     //позже данную ссылку ctx мы будем использовать для отрисовки всех объектов
 	var ctx = canvas.getContext("2d")
