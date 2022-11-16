@@ -128,7 +128,7 @@
 		drawTag(i, arr15[i])		
 	}
 	
-	//
+	// это функция определяет координату по Х
 	var checkPlace = function(evX){
 		if (evX < 110){
 			return 1
@@ -147,12 +147,15 @@
 		}
 	}	
 	
+	// функция canvas.addEventListener("click", function(event) -определяет куда был совершон клик 
 	canvas.addEventListener("click", function(event){
 		//console.log(event)
 		
+		// прверка координат по y - это у нас от 0 до 110 пикселей (это первый ряд)
 		if (event.clientY < 110){
-			//console.log("row 1")
+			//console.log("row 1") 
 			
+			// функция checkPlace(event.clientX) -определяет по какому ряду был осуществлён клик 
 			var place = checkPlace(event.clientX)
 			
 			switch(place){
@@ -174,7 +177,11 @@
 			}
 		}
 		
+		
+		// прверка координат по y - это у нас от 110 до 210 пикселей (это второй ряд)
 		if (event.clientY > 110 && event.clientY < 210){
+			
+			// функция checkPlace(event.clientX) -определяет по какому ряду был осуществлён клик 
 			var place = checkPlace(event.clientX)
 			
 			switch(place){
@@ -196,7 +203,10 @@
 			}
 		}
 		
+		// // прверка координат по y - это у нас от 210 до 310 пикселей (это третий ряд)
 		if (event.clientY > 210 && event.clientY < 310){
+			
+			// функция checkPlace(event.clientX) -определяет по какому ряду был осуществлён клик 
 			var place = checkPlace(event.clientX)
 			
 			switch(place){
@@ -218,7 +228,10 @@
 			}
 		}
 		
+		// прверка координат по y - это у нас от 310 до 410 пикселей (это четвёртый ряд)
 		if (event.clientY > 310 && event.clientY < 410){
+			
+			// функция checkPlace(event.clientX) -определяет по какому ряду был осуществлён клик 
 			var place = checkPlace(event.clientX)
 			
 			switch(place){
@@ -242,6 +255,7 @@
 		
 		//console.log(clickPos)
 		
+		// проверка пустого квадрата
 		if (arr15[clickPos - 4] === 0){
 			arr15[clickPos - 4] = arr15[clickPos]
 			arr15[clickPos] = 0
