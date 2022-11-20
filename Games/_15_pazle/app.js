@@ -14,9 +14,14 @@ cells.push(empty);
 function move(index){
    const cell = cells[index];
 
+   // Этот метод Math.abs() возвращает абсолютное значение числа, 
+   // то есть иными словами - если число неотрицательное, то его и возвращает, 
+   // а если отрицательное - отбрасывает знак "минус".
+
     const leftDiff = Math.abs (empty.left - cell.left);
     const topDiff = Math.abs (empty.top - cell.top);
 
+    // вычисление соседней клетки
     if(leftDiff + topDiff > 1){
         return;
     }
@@ -55,9 +60,10 @@ for(let i = 1; i <= 15; i++){
     cell.style.left = `${left * cellSize}px`;
     cell.style.top =  `${top * cellSize}px`;
 
+    // Метод append позволяет вставить в конец какого-либо элемента другой элемент.
     field.append(cell);
 
- 
+    // назначения обработчика событий
     cell.addEventListener('click', () => {
         move(i);
     });
