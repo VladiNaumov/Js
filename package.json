@@ -1,0 +1,22 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "javascripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladiNaumov/Js.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Vladimir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladiNaumov/Js/issues"
+  },
+  "homepage": "https://github.com/VladiNaumov/Js#readme"
+}
