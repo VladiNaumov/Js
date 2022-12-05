@@ -7,16 +7,16 @@ const model = [
         type: 'title', 
         value: 'конструктор сайтов на чистом JS', 
         options: {
-            tag: 'h2',
-            styles: {
-                backgraund: 'linear-gradient(to right, #ff0099, #493240',
-                color: '#fff',
-                padding: '1.5rem',
-                'text-aling': 'center'
+                tag: 'h2',
+                styles: {
+                    backgraund: 'linear-gradient(to right, #ff0099, #493240',
+                    color: '#fff',
+                    padding: '1.5rem',
+                    'text-aling': 'center'
 
-            } 
-
-    }},
+                } 
+            }
+    },
 
     { 
         type: 'columns', 
@@ -25,14 +25,16 @@ const model = [
             'JavaScript - это просто, интересно. Научись создавать любые UI своими руками. ',
             'badabadabda',
             'habababababa'
-        ], options: {
+        ], 
+        options: {
                 styles: {
-                backgraund: 'linear-gradient(to right, #ff0099, #493240',
-                padding: '2rem',
-                color: '#fff',
-                'text-weiting': 'bold'
+                    backgraund: 'linear-gradient(to right, #ff0099, #493240',
+                    padding: '2rem',
+                    color: '#fff',
+                    'text-weiting': 'bold'
 
-            } }
+                } 
+        }
         
     },
 
@@ -43,13 +45,15 @@ const model = [
             'Тут ты найдешь исчерпывающую информацию по любым аспектам языка, любым фреймворкам,',
             'такие как: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt и многое другое. Присоединяйся!'
 
-        ], options: {
-            styles: {
-                background: 'linear-gradient(to left, #f2994a, #f2c94c)',
-                padding: '1rem',
-                'font-weight': 'bold'
+        ], 
+        options: {
+                styles: {
+                    background: 'linear-gradient(to left, #f2994a, #f2c94c)',
+                    padding: '1rem',
+                    'font-weight': 'bold'
 
-            } }
+            } 
+        }
     }
     
 ]
