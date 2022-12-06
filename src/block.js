@@ -1,4 +1,4 @@
-import {col, row} from './util'
+// import {col, row} from './util'
 
 /* FILE block.js */
 
@@ -48,3 +48,14 @@ export class TextBlock extends Block {
 
 }
 
+ /* utils.js */
+
+function row(content) {
+  return `<div class="row">${content}</div>`
+}
+
+function col(content) {
+  return `<div class="col-sm">${content}</div>`
+}
+
+/* END */
