@@ -43,7 +43,6 @@ export class TextBlock extends Block {
   }
 
   toHTML() {
-    console.log(row(col(`<p>${this.value}</p>`)))
     return row(col(`<p>${this.value}</p>`))
   }
 
