@@ -1,5 +1,5 @@
 import image from './assets/image.png'
-import {TextBlock, TitleBlock, ColumnsBlock} from './classes/blocks'
+import {TextBlock, TitleBlock, ColumnsBlock} from './blocks'
 
 const text = `
 Крутые видео и уроки по JavaScript Тут ты найдешь исчерпывающую информацию по любым аспектам языка, любым фреймворкам, такие как: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt и многое другое. Присоединяйся!

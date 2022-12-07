@@ -9,6 +9,8 @@ snake2D-main - game Snake, snake2d-oop-main - games Snake в стиле OOP.
 
 Games/demo:
 
-Web-practice:
+Web:
+    /Task1 -JavaScript Конструктор v1
+    /Task2 -JavaScript Конструктор v2
 
 
