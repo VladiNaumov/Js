@@ -12,5 +12,6 @@ Games/demo:
 Web:
     /Task1 -JavaScript Конструктор v1
     /Task2 -JavaScript Конструктор v2
+    /Task3 - modal-window
 
 

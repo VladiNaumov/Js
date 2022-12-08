@@ -1,5 +1,5 @@
 //import {model} from './model'
-import './styles/main.css'
+//import './styles/main.css'
 
 
 /* FILE block.js */
@@ -93,6 +93,8 @@ const model = [
 const $site = document.querySelector('#site')
 
 model.forEach(block => {
+
+  //$site.innerHTML = ''
 
  console.log(block.toHTML)
   $site.insertAdjacentHTML('beforeend', block.toHTML())
