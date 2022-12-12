@@ -12,7 +12,7 @@ const fruits = [
 * 4. На основе $.modal нужно сделать другой плагин $.confirm (Promise)
 * */
 
-
+// в  функцию $.modal() я передаю объект
 const modal = $.modal({
   title: 'Vladilen Modal',
   closable: true,
@@ -21,6 +21,7 @@ const modal = $.modal({
     <p>Lorem ipsum dolor sit.</p>
   `,
   width: '400px',
+  // создание кнопок на плагине 
   footerButtons: [
     {text: 'Ок', type: 'primary', handler() {
       console.log('Primary btn clicked')

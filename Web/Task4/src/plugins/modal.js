@@ -1,10 +1,13 @@
+// работа с прототипами
 Element.prototype.appendAfter = function(element) {
   element.parentNode.insertBefore(this, element.nextSibling)
 }
 
 function noop() {}
 
+// создание Footer на плагине
 function _createModalFooter(buttons = []) {
+
   if (buttons.length === 0) {
     return document.createElement('div')
   }
@@ -12,6 +15,7 @@ function _createModalFooter(buttons = []) {
   const wrap = document.createElement('div')
   wrap.classList.add('modal-footer')
 
+  // отрисовка кнопок
   buttons.forEach(btn => {
     const $btn = document.createElement('button')
     $btn.textContent = btn.text
@@ -25,8 +29,9 @@ function _createModalFooter(buttons = []) {
   return wrap
 }
 
-// создание модального окна 
+// создание модального окна и передаю в неё объект $.modal({})
 function _createModal(options) {
+  console.log(options)
   const DEFAULT_WIDTH = '600px'
   const modal = document.createElement('div')
   modal.classList.add('vmodal')
@@ -47,6 +52,7 @@ function _createModal(options) {
   footer.appendAfter(modal.querySelector('[data-content]'))
   //помещаем модальное окно в DOM дерево 
   document.body.appendChild(modal)
+  // console.log(modal)
   return modal
 }
 
@@ -56,6 +62,7 @@ $.modal = function(options) {
   const ANIMATION_SPEED = 200
   // вызов модального окна
   const $modal = _createModal(options)
+  // console.log(options)
   let closing = false
   let destroyed = false
 
@@ -78,20 +85,26 @@ $.modal = function(options) {
     }
   }
 
+  // вспомогательный метод
   const listener = event => {
     if (event.target.dataset.close) {
       modal.close()
     }
   }
 
+  // обработка клика (события) по плагину
   $modal.addEventListener('click', listener)
 
+  // расширение Object.assign
   return Object.assign(modal, {
+    // удаление модального окна 
     destroy() {
+      // удаление NOD из DOM дерева 
       $modal.parentNode.removeChild($modal)
       $modal.removeEventListener('click', listener)
       destroyed = true
     },
+    // динамическое изменение контента модального окна   
     setContent(html) {
       $modal.querySelector('[data-content]').innerHTML = html
     }
