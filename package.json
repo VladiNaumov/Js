@@ -1,20 +1,22 @@
 {
-  "name": "js-constructor",
+  "name": "jscode",
   "version": "1.0.0",
-  "description": "javascript pure application",
-  "main": "src/index.js",
+  "description": "Larning JS",
+  "main": "index.js",
   "scripts": {
-    "serve": "parcel ./Web/Task2/src/index.html -p 4200 --open",
-    "build": "parcel build ./src/index.html --no-source-maps"
+    "serve": "parcel ./src/book/vuejsinactioncode/chapter-01/calculator.html -p 4200 --open",
     
+    "build": "parcel build ./src/index.html --no-source-maps",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "js",
-    "javascript"
+    "node",
+    "nodejs",
+    "vue"
   ],
-  "author": "Vladilen <v@mail.ru>",
+  "author": "Naum <naumdeveloper@yamdex.ru>",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "parcel-bundler": "^1.12.5"
   }
 }
