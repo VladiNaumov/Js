@@ -6,12 +6,12 @@ Book:
     
     /vuejsInActionCode - код с книги  Vue  is Action
 
-javascript-base :- базовые элементы языка.
+/javascript-base :- базовые элементы языка.
 
 Games: 
-snake2D-main - game Snake, snake2d-oop-main - games Snake в стиле OOP.
+/snake2D-main - game Snake, snake2d-oop-main - games Snake в стиле OOP.
 
-Games/demo:
+/demo:
 
 Web:
 
