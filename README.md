@@ -1,6 +1,8 @@
 # Js
 
-Book: - код с книги JS полное руководство v7.
+Book: 
+jstdg7-master - код с книги JS полное руководство v7.
+vuejsInActionCode - код с книги  Vue  is Action
 
 javascript-base :- базовые элементы языка.
 
@@ -13,5 +15,6 @@ Web:
     /Task1 -JavaScript Конструктор v1
     /Task2 -JavaScript Конструктор v2
     /Task3 - modal-window
+    /Task 5 - full code (modal-window)
 
 
