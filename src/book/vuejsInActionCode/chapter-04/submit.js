@@ -1,6 +1,0 @@
-methods: {
-  submitForm() {
-    alert('Submitted');
-…
-  }
-},
