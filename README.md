@@ -5,12 +5,13 @@ Book: /jstdg7-master - код с книги JS полное руководств
    
 /javascript-base :- базовые элементы языка.
 
-Games: 
+### Games: 
+
 /snake2D-main - game Snake, snake2d-oop-main - games Snake в стиле OOP.
 
 /demo:
 
-Web:
+### Web:
 
     /Task1 -JavaScript Конструктор v1
     
