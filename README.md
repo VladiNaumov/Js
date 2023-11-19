@@ -12,12 +12,14 @@
 
  /modal_window
 
-    /Task1 -JavaScript Конструктор v1
+    /ch01 -JavaScript Конструктор v1
     
-    /Task2 -JavaScript Конструктор v2
+    /ch02 -JavaScript Конструктор v2
     
-    /Task3 - modal-window
+    /ch03 - modal-window
     
-    /Task5 - full code (modal-window)
+    /ch05 - full code (modal-window)
 
- /die_Karte
+ /die_Karte - карточки для запоминания слов 
+
+ /wörterbuch_Deu_Rus
