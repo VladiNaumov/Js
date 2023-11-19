@@ -3,12 +3,14 @@
 ### javascript-base :
 - базовые элементы языка.
 
-### Games: 
+### games: 
 - /snake2D-main - game Snake, snake2d-oop-main - games Snake в стиле OOP.
 
 - /demo:
 
-### Web:
+### www:
+
+ /modal_window
 
     /Task1 -JavaScript Конструктор v1
     
@@ -16,6 +18,6 @@
     
     /Task3 - modal-window
     
-    /Task 5 - full code (modal-window)
+    /Task5 - full code (modal-window)
 
-
+ /die_Karte
