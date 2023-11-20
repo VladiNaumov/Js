@@ -10,7 +10,8 @@ const nodes = [
     { isIst: true, deu: 'ainkaufen', rus: 'покупать', isTranslate: false },
 ]
 
-const inputElement = document.getElementById('title')
+const inputElementRus = document.getElementById('deu')
+const inputElementDeu = document.getElementById('rus')
 const createBtm = document.getElementById('create')
 const listElement = document.getElementById('list')
 
@@ -27,7 +28,6 @@ function render() {
 
     for(let i = 0; i < nodes.length; i++){
         if(nodes[i].isIst){
-
             listElement.insertAdjacentHTML('beforeend', getNoteTemplate(nodes[i], i))
         }
 
@@ -44,20 +44,20 @@ function render() {
 
 createBtm.onclick = function () {
 
-    if (inputElement.value.length !== 0) {
+    if (inputElementRus.value.length !== 0 ) {
 
         const newNode = {
             isIst: 1,
-            deu: inputElement.value,
-            rus: '',
+            deu: inputElementRus.value,
+            rus: inputElementDeu.value,
             isTranslate: 0
 
         }
         nodes.push(newNode)
     }
 
-    inputElement.value = ''
-
+    inputElementRus.value = ''
+    inputElementDeu.value = ''
     render()
 }
 
