@@ -41,12 +41,12 @@ createBtm.onclick = function () {
             deu: inputElementRus.value,
             rus: inputElementDeu.value,
             isTranslate: 0
-
         }
         nodes.push(newNode)
     }
 
     inputElementRus.value = ''
+    inputElementDeu.value = ''
     render()
 }
 
@@ -77,14 +77,24 @@ render()
 
 function getNoteTemplate(node, index) {
     return ` 
-        <div class="card">
-              <span>${node.isTranslate ? node.rus : node.deu}</span>
-              
-                    <span>
-                         <!-- Write your comments here -->
-                        <span class= "${ !node.isTranslate ? 'btn' : 'btm-danger' }" data-index="${index}" data-type="toggle" >Check</span> 
-                        <span class="btm-danger" data-index="${index}" data-type="remove" >Delete</span>
+
+<table class="table" >
+ <!--
+           <th><span class="${ node.isTranslate ? node.rus : node.deu }"</span> </th>
+           <th><span class= "${ !node.isTranslate ? 'btn' : 'btm-danger' }" data-index="${index}" data-type="toggle">Check</span> </th>
+           <th><span class="btm-danger" data-index="${index}" data-type="remove" >Delete</span> </th>
+  
+-->    
+ <th>
+           <p> ${node.isTranslate ? node.rus : node.deu}</p>
            
-                    </span>
-         </div>`
+           <span class= "${ !node.isTranslate ? 'btn' : 'btm-danger' }" data-index="${index}" data-type="toggle">Check</span>
+           
+           <span class="btm-danger" data-index="${index}" data-type="remove" >Delete</span>
+ </th>
+ 
+<br>
+</table>
+
+`
 }
