@@ -8,6 +8,7 @@ const listElement = document.getElementById('list')
 // console.log(inputElement.value)
 
 
+
 function render() {
 
     listElement.innerHTML = ""
@@ -32,6 +33,7 @@ function render() {
 
 }
 
+
 createBtm.onclick = function () {
 
     if (inputElementRus.value.length !== 0 ) {
@@ -49,6 +51,7 @@ createBtm.onclick = function () {
     inputElementDeu.value = ''
     render()
 }
+let index = 0;
 
 listElement.onclick = function (event){
     //console.log(event.target)
@@ -56,7 +59,7 @@ listElement.onclick = function (event){
     //console.log(event.target.dataset.index)
 
     if(event.target.dataset.index){
-        const index = Number(event.target.dataset.index)
+        index = Number(event.target.dataset.index)
         const type = event.target.dataset.type
 
         if(type === 'toggle'){
@@ -86,7 +89,7 @@ function getNoteTemplate(node, index) {
   
 -->    
  <th>
-           <p> ${node.isTranslate ? node.rus : node.deu}</p>
+           <p> id: ${index} ${node.isTranslate ? node.rus : node.deu} </p>
            
            <span class= "${ !node.isTranslate ? 'btn' : 'btm-danger' }" data-index="${index}" data-type="toggle">Check</span>
            
