@@ -19,8 +19,8 @@
     
     /ch05 - full code (modal-window) modal_window
 
-    /ch06 die_Karte - карточки для запоминания слов (Нужно поместить на сервер (достаточно обычного php сервера))
+    /ch06 - die_Karte (карточки для запоминания слов (Нужно поместить на сервер (достаточно обычного php сервера))
 
-    /ch07 junan aikataulu
+    /ch07 - junan aikataulu
 
-    /ch08 wörterbuch_Deu_Rus
+    /ch08 - wörterbuch_Deu_Rus
