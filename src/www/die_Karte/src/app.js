@@ -51,7 +51,7 @@ createBtm.onclick = function () {
     inputElementDeu.value = ''
     render()
 }
-let index = 0;
+
 
 listElement.onclick = function (event){
     //console.log(event.target)
@@ -59,7 +59,7 @@ listElement.onclick = function (event){
     //console.log(event.target.dataset.index)
 
     if(event.target.dataset.index){
-        index = Number(event.target.dataset.index)
+        const index = Number(event.target.dataset.index)
         const type = event.target.dataset.type
 
         if(type === 'toggle'){
