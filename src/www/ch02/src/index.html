@@ -1,19 +1,45 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>JavaScript Конструктор</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Die Karte</title>
+    <link rel="stylesheet" href="theme.css">
+    <script type="module" src="app.js" defer></script>
 </head>
+
 <body>
 
-<div id="app" class="container-fluid">
-  <div id="panel" class="bg-light sidebar"></div>
-  <div id="site" class="content"></div>
+<div class="container pt-1">
+
+    <div class="card">
+
+        <h3>Die Karte</h3>
+
+        <div class="form-control">
+
+            <input
+                    type="text"
+                    placeholder=""
+                    id="deu"
+            />
+
+            <input
+                    type="text"
+                    placeholder=""
+                    id="rus"
+            />
+        </div>
+
+        <button class="btn" id="create">добавить</button>
+
+    </div>
+
 </div>
 
 
-<script src="index.js"></script>
+<div class="container" id="list"></div>
+
+
 </body>
 </html>

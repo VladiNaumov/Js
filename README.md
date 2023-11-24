@@ -10,17 +10,10 @@
 
 ### www:
 
+    /ch01 - modal_window
 
-    /ch01 -JavaScript Конструктор v1 modal_window
-    
-    /ch02 -JavaScript Конструктор v2 modal_window
-    
-    /ch03 - modal-window modal_window
-    
-    /ch05 - full code (modal-window) modal_window
+    /ch02 - die_Karte (карточки для запоминания слов (Нужно поместить на сервер (достаточно обычного php сервера))
 
-    /ch06 - die_Karte (карточки для запоминания слов (Нужно поместить на сервер (достаточно обычного php сервера))
+    /ch03 - junan aikataulu
 
-    /ch07 - junan aikataulu
-
-    /ch08 - wörterbuch_Deu_Rus
+    /ch04 - wörterbuch_Deu_Rus
