@@ -1,8 +1,7 @@
 import {nodes} from "./node.js";
 
 const listElement = document.getElementById('list')
-
-// console.log(inputElement.value)
+const listElementTime = document.getElementById('name')
 
 function render() {
 
@@ -13,37 +12,39 @@ function render() {
     }
 
     for (let i = 0; i < nodes.length; i++) {
-       // console.log('  ', nodes[i].isIst)
-      //  console.log('  ', nodes[i].aika)
+
         if (nodes[i].isIst) {
             listElement.insertAdjacentHTML('beforeend', getNoteTemplate(nodes[i], i))
         }
 
     }
 
-    /*
-    for (let note of nodes) {
-        listElement.insertAdjacentHTML('beforeend', getNoteTemplate(note))
-    }
+}
 
-     */
+
+function compareGetTime() {
+
+    const date = new Date()
+    let nowTime = date.toLocaleTimeString()
+
+    listElementTime.innerHTML = getName(nowTime)
+    console.log(nowTime)
+
+    for (let note of nodes) {
+       note.aika > nowTime ? note.isIst = true : note.isIst = false
+
+    }
 
 }
 
-function OnOffIsIst() {
 
-    const time = 1000
 
-    for (let note of nodes) {
+setInterval(() => {
 
-        note.aika > time ? note.isIst = true : note.isIst = false
+    compareGetTime()
+    render()
 
-    }
-}
-
-OnOffIsIst();
-
-render()
+}, 1000)
 
 function getNoteTemplate(node, index) {
     return ` 
@@ -57,6 +58,16 @@ function getNoteTemplate(node, index) {
  
 <br>
 </table>
+
+`
+}
+
+function getName(time) {
+    return ` 
+ 
+  <div class="card">
+        <h3> Junan aikataulu ${time} </h3>
+   </div>
 
 `
 }
