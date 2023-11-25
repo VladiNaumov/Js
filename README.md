@@ -1,7 +1,10 @@
 # Js
 
 ### games: 
-- /snake2D-main - game Snake, snake2d-oop-main - games Snake в стиле OOP.
+- snake2D-main 
+- game Snake, 
+- snake2d-oop-main - 
+- games Snake в стиле OOP.
 
 - /demo:
 
