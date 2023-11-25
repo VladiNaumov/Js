@@ -16,6 +16,6 @@
 
     /ch03 - junan aikataulu
 	
-	/ch04 - список пользователей
+	/ch04 - список пользователей (await fetch('https://jsonplaceholder.typicode.com/users')
 
     /ch05 - wörterbuch_Deu_Rus
