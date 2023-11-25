@@ -44,7 +44,7 @@ function usersNames(user) {
 <table class="table" >
 
  <th>
-           <p>  ${user.name} </p>
+           <p>${user.name}</p>
            
  </th>
  
@@ -61,7 +61,7 @@ function toHtml(text) {
 <table class="table" >
 
  <th>
-           <p>  ${text} </p>
+           <p>${text}</p>
            
  </th>
  

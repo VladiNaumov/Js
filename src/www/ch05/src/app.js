@@ -1,60 +1,63 @@
-const nodes = [
-    {isIst: true, deu: 'der Hunger', rus: 'голод'},
-    {isIst: true, deu: 'die Costen', rus: 'покупать'},
-    {isIst: true, deu: 'jetzt', rus: 'сейчас'},
-    {isIst: true, deu: 'spät', rus: 'поздно'},
-    {isIst: true, deu: 'ainkaufen', rus: 'покупать'},
-]
+import {nodes} from "./node.js";
 
-const inputElement = document.getElementById('title')
-const createBtm = document.getElementById('create')
+const filterElement = document.getElementById('filter')
 const listElement = document.getElementById('list')
 
-// console.log(inputElement.value)
+filterElement.addEventListener('input', (event)=>{
+  // console.log('input', event.target.value)
+
+    const value = event.target.value.toLowerCase()
+    const filterUser = nodes.filter((nodes)=>{
+        return nodes.deu.toLowerCase().includes(value)
+    })
+
+    render(filterUser)
+})
 
 
-function render() {
-
-    listElement.innerHTML = ""
-
-    if (nodes.length === 0) {
-        listElement.innerHTML = '<p> Is not elements </p>'
-    }
-
-    for (let note of nodes) {
-        console.log(note)
-        if (note.isIst) {
-            listElement.insertAdjacentHTML('beforeend', getNoteTemplate(note))
-        }
-    }
-
+function start(){
+    listElement.innerHTML= toHtml('Loading.....')
+       setTimeout(()=>{
+           console.log(nodes)
+           render(nodes)
+        }, 2000)
 
 }
 
-createBtm.onclick = function () {
-
-    if (inputElement.value.length !== 0) {
-
-        const newNode = {
-            isIst: 1,
-            deu: inputElement.value,
-            rus: '',
-            isTranslate: 0
-
-        }
-        nodes.push(newNode)
-    }
-
-    inputElement.value = ''
-
-    render()
+function render(nodes) {
+   const html = nodes.map(worterbuch)
+    listElement.innerHTML = html
+    console.log(html)
 }
 
-render()
-
-function getNoteTemplate(node, index) {
+function worterbuch(nodes) {
     return ` 
-        <div class="card">
-              <span>${node.deu} - ${node.rus}</span>
-         </div>`
+<table class="table" >
+
+ <th>
+           <p>${nodes.deu} - ${nodes.rus}</p>
+           
+ </th>
+ 
+<br>
+</table>
+
+`
 }
+function toHtml(text) {
+    return ` 
+
+<table class="table" >
+
+ <th>
+           <p>${text}</p>
+           
+ </th>
+ 
+<br>
+</table>
+
+`
+}
+
+start()
