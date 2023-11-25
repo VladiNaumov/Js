@@ -3,9 +3,10 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>список пользователей</title>
+    <title>wörterbuch_Deu_Rus</title>
     <link rel="stylesheet" href="theme.css">
-    <script  src="app.js" defer></script>
+    <script src="app.js" defer></script>
+
 </head>
 
 <body>
@@ -14,24 +15,26 @@
 
     <div class="card">
 
-        <h3>список пользователей</h3>
-
+        <h1>Wörterbuch_Deu_Rus</h1>
         <div class="form-control">
 
             <input
                     type="text"
                     placeholder=""
-                    id="filter"
+                    id="title"
             />
-
-        </div>
-
+			
+		</div>	
+			<span>
+				<button class="btn" id="create">добавить</button>
+			</span>
+        
     </div>
 
+    <ul class="card" id="list"></ul>
+
+
 </div>
-
-
-<div class="container" id="list"></div>
 
 
 </body>

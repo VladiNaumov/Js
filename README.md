@@ -15,5 +15,7 @@
     /ch02 - die_Karte (карточки для запоминания слов (Нужно поместить на сервер (достаточно обычного php сервера))
 
     /ch03 - junan aikataulu
+	
+	/ch04 - список пользователей
 
-    /ch04 - wörterbuch_Deu_Rus
+    /ch05 - wörterbuch_Deu_Rus

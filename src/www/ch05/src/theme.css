@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 [v-cloak] {
   display: none;
@@ -16,7 +17,7 @@ body {
   font-size: 16px;
   color: #2c3e50;
   background: #2c3e50;
-
+  
 }
 
 hr {
@@ -124,11 +125,14 @@ h3 {
   border-color: #e53935;
   border-radius: 99px;
   letter-spacing: 0.05em;
+  text-decoration: none;
   text-transform: uppercase;
+  margin-right: 10px;
   padding: 0.5rem 1.5rem;
+  white-space: nowrap;
   font-weight: 700;
-  cursor: pointer;
-
+  outline: none;
+  transition: all 0.22s;
 }
 
 .container {
@@ -178,7 +182,7 @@ h3 {
 }
 
 .card {
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 10px;
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
   background: #fff;
@@ -236,26 +240,3 @@ h3 {
   font-weight: bold;
   color: #ffffff;
 }
-
-/* сделает ширину таблицы равной ширине блока контейнера, в котором она находится */
-table {
-  width: 100%;
-}
-/* задаст фиксированную ширину для таблицы
-table {
-    width: 1500px;
-}
-*/
-
-table {
-  border-collapse: collapse;
-  line-height: 2;
-  background: #fff;
-  color: #0C213B;
-  border-radius: 10px;
-}
-th {
-  padding: 10px;
-
-}
-

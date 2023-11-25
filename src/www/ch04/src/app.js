@@ -1,60 +1,74 @@
-const nodes = [
-    {isIst: true, deu: 'der Hunger', rus: 'голод'},
-    {isIst: true, deu: 'die Costen', rus: 'покупать'},
-    {isIst: true, deu: 'jetzt', rus: 'сейчас'},
-    {isIst: true, deu: 'spät', rus: 'поздно'},
-    {isIst: true, deu: 'ainkaufen', rus: 'покупать'},
-]
-
-const inputElement = document.getElementById('title')
-const createBtm = document.getElementById('create')
+const filterElement = document.getElementById('filter')
 const listElement = document.getElementById('list')
 
-// console.log(inputElement.value)
+let USER = []
 
+filterElement.addEventListener('input', (event)=>{
+  // console.log('input', event.target.value)
 
-function render() {
+    const value = event.target.value.toLowerCase()
+    const filterUser = USER.filter((user)=>{
+        return user.name.toLowerCase().includes(value)
+    })
 
-    listElement.innerHTML = ""
+    render(filterUser)
+})
 
-    if (nodes.length === 0) {
-        listElement.innerHTML = '<p> Is not elements </p>'
+async function start(){
+    listElement.innerHTML= toHtml('Loading.....')
+    try{
+        const resp = await fetch('https://jsonplaceholder.typicode.com/users')
+         // console.log(resp)
+        const data = await resp.json()
+        //  console.log(data)
+        setTimeout(()=>{
+            USER = data
+            render(data)
+        }, 1000)
+
+    }catch (err){
+        listElement.innerHTML= toHtml(err.message)
     }
+}
 
-    for (let note of nodes) {
-        console.log(note)
-        if (note.isIst) {
-            listElement.insertAdjacentHTML('beforeend', getNoteTemplate(note))
-        }
-    }
+function render(user = []) {
 
+   const html = user.map(usersNames)
+    listElement.innerHTML = html
 
 }
 
-createBtm.onclick = function () {
-
-    if (inputElement.value.length !== 0) {
-
-        const newNode = {
-            isIst: 1,
-            deu: inputElement.value,
-            rus: '',
-            isTranslate: 0
-
-        }
-        nodes.push(newNode)
-    }
-
-    inputElement.value = ''
-
-    render()
-}
-
-render()
-
-function getNoteTemplate(node, index) {
+function usersNames(user) {
     return ` 
-        <div class="card">
-              <span>${node.deu} - ${node.rus}</span>
-         </div>`
+
+<table class="table" >
+
+ <th>
+           <p>  ${user.name} </p>
+           
+ </th>
+ 
+<br>
+</table>
+
+`
 }
+
+
+function toHtml(text) {
+    return ` 
+
+<table class="table" >
+
+ <th>
+           <p>  ${text} </p>
+           
+ </th>
+ 
+<br>
+</table>
+
+`
+}
+
+start()
