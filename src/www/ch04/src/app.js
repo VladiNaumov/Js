@@ -20,7 +20,7 @@ async function start(){
         const resp = await fetch('https://jsonplaceholder.typicode.com/users')
          // console.log(resp)
         const data = await resp.json()
-        //  console.log(data)
+         console.log(data)
         setTimeout(()=>{
             USER = data
             render(data)
